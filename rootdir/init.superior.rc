@@ -48,6 +48,8 @@ on init
     mkdir /efs 0770 system efs
     mkdir /preload 0771 system system
 
+    export LD_SHIM_LIBS /system/lib/libsec-ril.so|libsamsung_symbols.so
+
 # ko files for exfat
     insmod /system/lib/modules/exfat_core.ko
     insmod /system/lib/modules/exfat_fs.ko

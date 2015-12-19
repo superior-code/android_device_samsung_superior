@@ -29,7 +29,7 @@ TARGET_BOARD_INFO_FILE := device/samsung/superior/board-info.txt
 
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := console=ttyO2,115200n8 mem=1024M androidboot.console=ttyO2 vram=20M omapfb.vram=0:16M
+BOARD_KERNEL_CMDLINE := console=ttyO2,115200n8 mem=1024M androidboot.console=ttyO2 vram=20M omapfb.vram=0:16M androidboot.selinux=permissive
 
 # Inline kernel building
 TARGET_KERNEL_SOURCE := kernel/samsung/piranha
@@ -111,34 +111,6 @@ WITH_DEXPREOPT := true
 WITH_DEXPREOPT_PIC := true
 WITH_DEXPREOPT_COMP := false
 PRODUCT_DEX_PREOPT_DEFAULT_FLAGS := --compiler-filter=everything
-
-# Selinux
-BOARD_SEPOLICY_DIRS += \
-    device/samsung/superior/selinux
-
-BOARD_SEPOLICY_UNION += \
-    file_contexts \
-    file.te \
-    app.te \
-    device.te \
-    domain.te \
-    drmserver.te \
-    fRom.te \
-    geomagneticd.te \
-    gpsd.te \
-    orientationd.te \
-    pvrsrvinit.te \
-    init.te \
-    init_shell.te \
-    mediaserver.te \
-    nfc.te \
-    rild.te \
-    smc_pa.te \
-    system.te \
-    sysinit.te \
-    ueventd.te \
-    vold.te \
-    wpa_supplicant.te
 
 # Override healthd HAL
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.piranha

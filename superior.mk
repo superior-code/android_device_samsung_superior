@@ -100,8 +100,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.hsxpa=1 \
     ro.ril.gprsclass=10
 
-PRODUCT_PACKAGES += \  
-	libsamsung_symbols \  
+PRODUCT_PACKAGES += \
+	libsamsung_symbols \
 	ril-wrapper  
 
 # These are the hardware-specific features
